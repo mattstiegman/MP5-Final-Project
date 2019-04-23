@@ -1,8 +1,7 @@
 ﻿<Properties StartupConfiguration="{9B62860B-E0F4-AB6F-1D60-6D8818CA2393}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/gamePlay.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/gamePlay.cs">
     <Files>
-      <File FileName="Assets/mainMenu.cs" Line="18" Column="6" />
-      <File FileName="Assets/gamePlay.cs" Line="13" Column="1" />
+      <File FileName="Assets/Script/gamePlay.cs" Line="12" Column="76" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
