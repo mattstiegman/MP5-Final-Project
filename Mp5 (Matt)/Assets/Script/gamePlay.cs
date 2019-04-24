@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class gamePlay : MonoBehaviour {
     public GameObject arrowPrefab;
-
     private void Update() {
         /**Since we are in the update(), this means everytime the frame will be updated.
         Therefore the Time.deltaTime is necessary for refreshing the frame. 
@@ -15,5 +14,12 @@ public class gamePlay : MonoBehaviour {
 
         transform.position = transform.position + horizontal * Time.deltaTime * 15;
 
+        /*Shooting arrows*/
+        if (Input.GetButtonDown("Fire1")) {
+            GameObject arrow = Instantiate(arrowPrefab,
+                                          transform.position,
+                                          Quaternion.identity);
+            arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(60.0f, 0);
+        }
     }
 }
