@@ -12,7 +12,7 @@ public class gamePlay : MonoBehaviour
         /**Since we are in the update(), this means everytime the frame will be updated.
         Therefore the Time.deltaTime is necessary for refreshing the frame. 
         **/
-        transform.position = transform.position + horizontal * Time.deltaTime;
+        transform.position = transform.position + horizontal * Time.deltaTime * 15;
 
     }
 }
