@@ -71,6 +71,7 @@ public class gamePlay : MonoBehaviour {
         //Brings up Game over screen and kills player on contact with an enemy.
         if (collision.gameObject.tag.Equals("Enemy"))
         {
+            EnemyMovement.moveSpeed = 0.0f;
             EnemySpawner.spawnAllowed = false;
             gameOver.SetActive(true);
             restartButton.SetActive(true);

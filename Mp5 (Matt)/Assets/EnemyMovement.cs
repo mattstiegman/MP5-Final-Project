@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     GameObject target;
-    float moveSpeed;
+    public static float moveSpeed;
     Vector3 direction;
     void Start()
     {

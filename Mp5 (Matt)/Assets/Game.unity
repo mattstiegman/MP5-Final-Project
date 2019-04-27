@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c32285768f334d4e923de73715a7c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 7110001470389291123, guid: 7ef828775413a44929d7618732c93d44,
+  arrowPrefab: {fileID: 3519981870216275590, guid: b31464432b1af49458240b09e86bd0f0,
     type: 3}
   crossHair: {fileID: 1685533772}
   gameOver: {fileID: 1161327394}
