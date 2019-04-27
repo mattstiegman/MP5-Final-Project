@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
         //When the object is created, its target is set to the player and given a random move speed.
         target = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
-        moveSpeed = Random.Range(4f, 8f);
+        moveSpeed = Random.Range(3f, 6f);
     }
 
     
@@ -34,5 +34,13 @@ public class EnemyMovement : MonoBehaviour
         //If the player dies, enemies stop moving.
         else
             rb.velocity = Vector3.zero;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Deletes enemies on contact with a projectile.
+        if (collision.gameObject.tag.Equals("Arrow"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

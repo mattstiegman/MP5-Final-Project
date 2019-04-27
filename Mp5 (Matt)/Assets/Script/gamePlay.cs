@@ -7,8 +7,16 @@ public class gamePlay : MonoBehaviour {
 
     public GameObject arrowPrefab; // prefab of the arrow.
     public GameObject crossHair; // objecet of crosshair.
+    public GameObject gameOver, restartButton, menuButton;
     float fireRate = 0.5f;
     float lastShot = 0f;
+
+    private void Start()
+    {
+        gameOver.SetActive(false);
+        restartButton.SetActive(false);
+        menuButton.SetActive(false);
+    }
 
 
     // Joystick Class/Variable that is used instead of the Input.GetAxis call.
@@ -55,6 +63,19 @@ public class gamePlay : MonoBehaviour {
         } else {
             //if player didn't move the crosshair, the crosshair will disappear.
             crossHair.SetActive(false);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Brings up Game over screen and kills player on contact with an enemy.
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            EnemySpawner.spawnAllowed = false;
+            gameOver.SetActive(true);
+            restartButton.SetActive(true);
+            menuButton.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 }
