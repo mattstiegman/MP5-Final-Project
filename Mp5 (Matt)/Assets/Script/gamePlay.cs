@@ -7,7 +7,7 @@ public class gamePlay : MonoBehaviour {
 
     public GameObject arrowPrefab; // prefab of the arrow.
     public GameObject crossHair; // objecet of crosshair.
-    public GameObject gameOver, restartButton, menuButton;
+    public GameObject gameOver, restartButton, menuButton, backButton;
     float fireRate = 0.5f;
     float lastShot = 0f;
 
@@ -76,6 +76,7 @@ public class gamePlay : MonoBehaviour {
             gameOver.SetActive(true);
             restartButton.SetActive(true);
             menuButton.SetActive(true);
+            backButton.SetActive(false);
             gameObject.SetActive(false);
         }
     }

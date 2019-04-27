@@ -426,6 +426,7 @@ MonoBehaviour:
   gameOver: {fileID: 1161327394}
   restartButton: {fileID: 685907987}
   menuButton: {fileID: 1417031123}
+  backButton: {fileID: 2081403321}
   joystickMovement: {fileID: 1049024490}
   joystickAim: {fileID: 152576051}
 --- !u!61 &516539945
@@ -491,7 +492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 47}
+  m_AnchoredPosition: {x: -6, y: 69}
   m_SizeDelta: {x: 176.25, y: 41.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &685907989
@@ -1159,7 +1160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 0}
+  m_AnchoredPosition: {x: -6, y: 27.700012}
   m_SizeDelta: {x: 112.7, y: 41.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1417031125
@@ -1325,7 +1326,7 @@ PrefabInstance:
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1087.4
+      value: 1070
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
