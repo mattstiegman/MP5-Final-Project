@@ -41,6 +41,8 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.tag.Equals("Arrow"))
         {
             gameObject.SetActive(false);
+            ScoreScript.score++;
+            Destroy(GameObject.Find("Arrow"));
         }
     }
 }

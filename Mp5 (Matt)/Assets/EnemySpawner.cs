@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     {
         //Enemies are spawned at a rate declared below.
         spawnAllowed = true;
-        InvokeRepeating("SpawnAnEnemy", 1f, 2f);
+        InvokeRepeating("SpawnAnEnemy", 0f, 1f);
     }
 
     
