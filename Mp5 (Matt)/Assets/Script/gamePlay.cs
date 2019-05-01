@@ -8,11 +8,14 @@ public class gamePlay : MonoBehaviour {
     public GameObject arrowPrefab; // prefab of the arrow.
     public GameObject crossHair; // objecet of crosshair.
     public GameObject gameOver, restartButton, menuButton, backButton;
+    public Animator animation;
+    GameObject arrow;
     float fireRate = 0.5f;
     float lastShot = 0f;
 
     private void Start()
     {
+        animation = GetComponent<Animator>();
         gameOver.SetActive(false);
         restartButton.SetActive(false);
         menuButton.SetActive(false);
@@ -33,7 +36,22 @@ public class gamePlay : MonoBehaviour {
         **/
         Vector3 horizontal = new Vector3(joystickMovement.Horizontal,
                                          joystickMovement.Vertical, 0.0f);
+
+        if (joystickMovement.Horizontal < -0.1f)
+        {
+            animation.SetBool("isRunLeft", true);
+
+        } else if (joystickMovement.Horizontal > 0.1f) {
+            animation.SetBool("isRunRight", true);
+        } else if (joystickMovement.Horizontal > -0.1f && joystickMovement.Horizontal < 0.1f) {
+            animation.SetBool("isRunRight", false);
+            animation.SetBool("isRunLeft", false);
+        }
+       
+
         transform.position = transform.position + horizontal * Time.deltaTime * 15;
+
+
 
         // Aiming and shooting arrows.
         aimAndShoot();
@@ -41,7 +59,6 @@ public class gamePlay : MonoBehaviour {
     private void aimAndShoot() {
         Vector3 aim = new Vector3(joystickAim.Horizontal, joystickAim.Vertical, 0.0f);
         Vector2 shootingDirection = new Vector2(joystickAim.Horizontal, joystickAim.Vertical);
-        GameObject arrow; 
         if (aim.magnitude > 0.0f)
         {   //normalize the vector 1 unit long. 
             //That being said, the crosshair can only be 1 unit away from the player.
@@ -49,7 +66,8 @@ public class gamePlay : MonoBehaviour {
             aim *= 5.0f; //increase the distance between the player and the crosshair.
             crossHair.transform.localPosition = aim;
             crossHair.SetActive(true);
-            if (aim.magnitude > 0.0f) {
+
+            shootingDirection.Normalize();
                 if (Time.time > fireRate + lastShot) {
                     arrow = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
                     arrow.GetComponent<Rigidbody2D>().velocity = shootingDirection * 30;
@@ -58,8 +76,8 @@ public class gamePlay : MonoBehaviour {
                     //Destory() will destory the arrows in two seconds.
                     Destroy(arrow, 2.0f);
                     lastShot = Time.time;
+                    crossHair.SetActive(true);
                 }
-            }
         } else {
             //if player didn't move the crosshair, the crosshair will disappear.
             crossHair.SetActive(false);
